@@ -1,14 +1,14 @@
 package com.example.demo;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(value = "/ping")
 public class PingController {
 
-    @Path(value = "ping")
-    @GET
+    @RequestMapping(method = RequestMethod.GET)
     public String ping() {
         return "pong";
     }
